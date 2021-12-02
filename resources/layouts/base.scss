@@ -1,0 +1,14 @@
+@import "../components/footer/footer.scss";
+@import "../components/header/header.scss";
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__main {
+        flex: 1;
+        background-color: darkslategray;
+        color: dimgray;
+    }
+}
