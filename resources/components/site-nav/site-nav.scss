@@ -1,0 +1,17 @@
+.Nav {
+    display: flex;
+    list-style: none;
+    &__listItem {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+    &__item {
+        color: $color-gray;
+        &:hover,
+        &:focus,
+        &:active {
+            color: black;
+        }
+    }
+}

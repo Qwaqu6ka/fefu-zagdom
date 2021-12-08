@@ -7,13 +7,13 @@
     
         <link href="/build/bundle.css" rel="stylesheet">
     </head>
-    <body style="margin:0;">
+    <body>
         <div class="Layout">
             <header class="Layout__header">
                 {% include "@components/header/header.twig" %}
             </header>
 
-            <main class="Layout__main">
+            <main class="Layout__main Container">
                 {% block main %}{% endblock %}
             </main>
 

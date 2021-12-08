@@ -19,5 +19,8 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.44.0",
         "sass-loader": "^12.3.0"
+    },
+    "dependencies": {
+        "uikit": "^3.9.4"
     }
 }
