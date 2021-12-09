@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__main {
+        flex: 1;
+        background-color: darkslategray;
+        color: dimgray;
+    }
+}

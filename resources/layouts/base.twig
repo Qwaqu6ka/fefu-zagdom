@@ -1,0 +1,27 @@
+<html lang="{{ app.getLocate }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Загородный дом</title>
+    
+        <link href="/build/bundle.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="Layout">
+            <header class="Layout__header">
+                {% include "@components/header/header.twig" %}
+            </header>
+
+            <main class="Layout__main Container">
+                {% block main %}{% endblock %}
+            </main>
+
+            <footer class="Layout__footer">
+                {% include "@components/footer/footer.twig" %}
+            </footer>
+        </div>
+
+        <script type="text/javascript" src="/build/bundle.js"></script>
+    </body>
+</html>
