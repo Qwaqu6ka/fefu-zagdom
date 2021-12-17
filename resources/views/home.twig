@@ -41,19 +41,19 @@
 } %}
 
 {% block main %}
-    <section class="Layout__section">
-        <div class="Layout__section_slider">
+    <section class="Container">
+        <div class="Layout__slider">
             {% include "@components/slider/slider.twig" with {
-                items: scope.slides,
+                items: scope.slides
             } %}
         </div>
 
-        <!-- <div class="Layout__section_featured">
+        <div class="Layout__featured">
             {% include "@components/featured-section/featured-section.twig" with {
                 title: scope.featuredSection.title,
                 text: scope.featuredSection.text,
                 items: scope.featuredSection.items,
             } %}
-        </div> -->
+        </div>
     </section>
 {% endblock %}

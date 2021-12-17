@@ -11,18 +11,21 @@ body {
         flex: 1;
     }
 
-    &__section {
-        padding-top: 80px;
-        padding-bottom: 80px;
+    &__slider {
+        padding-top: 40px;
 
-        &_slider {
-            padding-top: 40px;
+        @include vw-sm-down {
+            padding-top: 20px;
+        }
+    }
+
+    &__featured {
+        padding-top: 120px;
+        padding-bottom: 120px;
+
+        @include vw-sm-down {
+            padding-top: 60px;
             padding-bottom: 60px;
-
-            @include vw-sm-down {
-                padding-top: 20px;
-                padding-bottom: 40px;
-            }
         }
     }
 }
