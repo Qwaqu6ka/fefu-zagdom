@@ -1,7 +1,59 @@
 {% extends "@layouts/base.twig" %}
 
+{% set scope = {
+    slides: [
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Проектируем и строим загородные дома',
+            text: 'Строим дома «под ключ»: от этапа проектирования и до финишной отделки помещений',
+        },
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit',
+            text: 'Harum ducimus quo pariatur eum est eius deleniti nisi quam?',
+        },
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Facilis officia earum quibusdam',
+            text: 'Facilis officia earum quibusdam in qui odit dolorum fugiat, veritatis soluta obcaecati.',
+        },
+    ],
+    featuredSection: {
+        title: 'Каждый проект для нас — важный',
+        text: 'Мы строительная компания полного цикла. Вникаем во все детали, разрабатываем планировку 
+        будущего дома, продумываем конструктивные решения и общую архитектурную концепцию',
+        items: [
+            {
+                icon: 'assets/icons/house_green.svg',
+                title: '57 домов',
+                text: 'спроектировали и построили “под ключ”',
+            },
+            {
+                icon: 'assets/icons/calendar_green.svg',
+                title: '14 лет',
+                text: 'мы на рынке загородного строительства',
+            },
+        ],
+    },
+} %}
+
 {% block main %}
-    <h1>My NAME</h1>
-    <span>contentcontentcontentcontentcontentcontent</span>
-    <br><a href="https://feip.co">FEIP</a>
+    <section class="Layout__section">
+        <div class="Layout__section_slider">
+            {% include "@components/slider/slider.twig" with {
+                items: scope.slides,
+            } %}
+        </div>
+
+        <!-- <div class="Layout__section_featured">
+            {% include "@components/featured-section/featured-section.twig" with {
+                title: scope.featuredSection.title,
+                text: scope.featuredSection.text,
+                items: scope.featuredSection.items,
+            } %}
+        </div> -->
+    </section>
 {% endblock %}

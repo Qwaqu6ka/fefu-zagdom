@@ -6,7 +6,7 @@
     address: 'г. Владивосток<br>ул. Выселковая 49, стр. 3',
 } %}
 
-{% macro content() %}
+{% macro content(scope) %}
     <div class="ContactsSection">
         <div>
             <a href="tel:{{ scope.phone }}" class="ContactsItem">
@@ -15,7 +15,6 @@
                     alt=""
                     class="ContactsItem__icon"
                 >
-                Lorem, ipsum dolor.
                 {{ scope.phone }}
             </a>
         </div>

@@ -1,0 +1,61 @@
+.Slider {
+    border-radius: 30px;
+}
+
+.Slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 450px;
+    padding-left: 144px;
+    padding-right: 144px;
+
+    @include vw-sm-down {
+        height: 391px;
+        justify-content: flex-end;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    &__picture,
+    &__image {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__picture {
+        z-index: -1;
+    }
+
+    &__image {
+        object-fit: cover;
+    }
+
+    &__content {
+        @include vw-md-up {
+            max-width: 459px;
+        }
+        @include vw-sm-down {
+            padding-bottom: 30px;
+        }
+    }
+
+    &__title,
+    &__text {
+        color: white;
+    }
+
+    &__title {
+        font: $base-heading-font-family;
+        font-size: toRem(46px);
+        font-weight: $font-weight-bold;
+        margin-bottom: 12px;
+        line-height: 1.2;
+
+        @include vw-md-down {
+            font-size: toRem(30px);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{% import _self as macros %}
+
+{% set scope = {
+    items: items ?? [],
+} %}
+
+{% macro slide(item) %}
+    {% set data = {
+        desktopImage: item.desktopImage ?? '',
+        mobileImage: item.mobileImage ?? '',
+        title: item.title ?? '',
+        text: item.text ?? '',
+    } %}
+
+    <div class="Slide">
+        <picture class="Slide__picture">
+            <source media="(max-width: 639px)" srcset="{{ data.mobileImage }}">
+            <source media="(min-width: 640px)" srcset="{{ data.desktopImage }}">
+            <img src="{{ data.desktopImage }}" alt="{{ data.title }}" class="Slide__image">
+        </picture>
+        <article class="Slide__content">
+            <h2 class="Slide__title">
+                {{ data.title|raw }}
+            </h2>
+            <p class="Slide__text">
+                {{ data.text|raw }}
+            </p>
+        </article>
+    </div>
+{% endmacro %}
+
+{% macro content(scope) %}
+    <!-- Slider main container -->
+    <div class="Slider swiper" data-swiper>
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for item in scope.items %}
+                <div class="swiper-slide">
+                    {{ macros.slide(item) }}
+                </div>
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+{% endmacro %} 
+
+{{ macros.content(scope) }}
