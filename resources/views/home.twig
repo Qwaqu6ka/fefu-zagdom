@@ -38,22 +38,42 @@
             },
         ],
     },
+    projects: [
+        {
+            title: 'Дом в скандинавском стиле',
+            text: 'Одноэтажный дом из газобетона габаритными размерами 
+            10.73 х 10.73 м. и жилой площадью 101 кв. м. с вальмовой кровлей\n\nПостроен по индивидуальному проекту.',
+            image: 'assets/images/projects1.png',
+        },
+        {
+            title: 'Дом из газобетона',
+            text: 'Одноэтажный дом габаритными размерами 15.2 х 9.7м. Приведенная площадь – 127.7 м.кв.\n\n
+            Три спальные комнаты, два сан.узла, большая кухня-гостиная с выходом на террасу. ',
+            image: 'assets/images/projects2.png',
+        }
+    ],
 } %}
 
 {% block main %}
     <section class="Container">
-        <div class="Layout__slider">
+        <section class="Layout__slider">
             {% include "@components/slider/slider.twig" with {
                 items: scope.slides
             } %}
-        </div>
+        </section>
 
-        <div class="Layout__featured">
+        <section class="Layout__featured">
             {% include "@components/featured-section/featured-section.twig" with {
                 title: scope.featuredSection.title,
                 text: scope.featuredSection.text,
                 items: scope.featuredSection.items,
             } %}
-        </div>
+        </section>
+    </section>
+
+    <section class="Layout__projects">
+        {% include "@components/projects-section/projects-section.twig" with {
+            items: scope.projects,
+        } %}
     </section>
 {% endblock %}
