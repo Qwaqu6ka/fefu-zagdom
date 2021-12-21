@@ -1,7 +1,111 @@
 {% extends "@layouts/base.twig" %}
 
+{% set scope = {
+    slides: [
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Проектируем и строим загородные дома',
+            text: 'Строим дома «под ключ»: от этапа проектирования и до финишной отделки помещений',
+        },
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit',
+            text: 'Harum ducimus quo pariatur eum est eius deleniti nisi quam?',
+        },
+        {
+            desktopImage: 'assets/images/slider_desktop.png',
+            mobileImage: 'assets/images/slider_mobile.png',
+            title: 'Facilis officia earum quibusdam',
+            text: 'Facilis officia earum quibusdam in qui odit dolorum fugiat, veritatis soluta obcaecati.',
+        },
+    ],
+    featuredSection: {
+        title: 'Каждый проект для нас — важный',
+        text: 'Мы строительная компания полного цикла. Вникаем во все детали, разрабатываем планировку 
+        будущего дома, продумываем конструктивные решения и общую архитектурную концепцию',
+        items: [
+            {
+                icon: 'assets/icons/house_green.svg',
+                title: '57 домов',
+                text: 'спроектировали и построили “под ключ”',
+            },
+            {
+                icon: 'assets/icons/calendar_green.svg',
+                title: '14 лет',
+                text: 'мы на рынке загородного строительства',
+            },
+        ],
+    },
+    projects: [
+        {
+            title: 'Дом в скандинавском стиле',
+            text: 'Одноэтажный дом из газобетона габаритными размерами 
+            10.73 х 10.73 м. и жилой площадью 101 кв. м. с вальмовой кровлей\n\nПостроен по индивидуальному проекту.',
+            image: 'assets/images/projects1.png',
+        },
+        {
+            title: 'Дом из газобетона',
+            text: 'Одноэтажный дом габаритными размерами 15.2 х 9.7м. Приведенная площадь – 127.7 м.кв.\n\n
+            Три спальные комнаты, два сан.узла, большая кухня-гостиная с выходом на террасу. ',
+            image: 'assets/images/projects2.png',
+        }
+    ],
+    news: [
+        {
+            image: 'assets/images/news1.png',
+            date: '20 авг 2021',
+            title: 'Как сделать строительство дешевле?',
+            text: 'Строительство дома можно сделать дешевле — выбрав проект...',
+        },
+        {
+            image: 'assets/images/news2.png',
+            date: '20 авг 2021',
+            title: 'Почему Гуд Вилл строит лучшие дома?',
+            text: 'Хотим обрадовать тех, кто планирует переезд из квартиры в дом...',
+        },
+        {
+            image: 'assets/images/news3.png',
+            date: '20 авг 2021',
+            title: 'Преимущества и недостатки частного дома',
+            text: 'Первое и главное: строим дом индивидуально для вас, по вашим...',
+        },
+        {
+            image: 'assets/images/news4.png',
+            date: '20 авг 2021',
+            title: 'Из чего мы строим дома в ипотеку?',
+            text: 'Самый популярный вопрос наших клиентов касается материалов, которы...',
+        },
+    ],
+} %}
+
 {% block main %}
-    <h1>My NAME</h1>
-    <span>contentcontentcontentcontentcontentcontent</span>
-    <br><a href="https://feip.co">FEIP</a>
+    <section class="Container">
+        <section class="Layout__slider">
+            {% include "@components/slider/slider.twig" with {
+                items: scope.slides
+            } %}
+        </section>
+
+        <section class="Layout__featured">
+            {% include "@components/featured-section/featured-section.twig" with {
+                title: scope.featuredSection.title,
+                text: scope.featuredSection.text,
+                items: scope.featuredSection.items,
+            } %}
+        </section>
+    </section>
+
+    <section class="Layout__projects">
+        {% include "@components/projects-section/projects-section.twig" with {
+            items: scope.projects,
+        } %}
+    </section>
+
+    <section class="Layout__news">
+        {% include "@components/news-section/news-section.twig" with {
+            items: scope.news,
+        } %}
+    </section>
 {% endblock %}
