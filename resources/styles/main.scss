@@ -13,9 +13,20 @@ $font-weight-bold: 700;
     @return $size / 16px * 1rem;
 }
 
-@import "./media.scss";
 @import "./uikit.scss";
+
+// Media
+@import "./media.scss";
+
+// Layouts
 @import "../layouts/base.scss";
+
+// Mixins
+@import "./mixins.scss";
+
+// Elements
+@import "./elements.scss";
+@import "./swiper.scss";
 
 // Components
 @import "../components/header/header.scss";
@@ -25,7 +36,4 @@ $font-weight-bold: 700;
 @import "../components/slider/slider.scss";
 @import "../components/featured-section/featured-section.scss";
 @import "../components/projects-section/projects-section.scss";
-
-// Elements
-@import "./elements.scss";
-@import "./swiper.scss"
+@import "../components/news-section/news-section.scss";

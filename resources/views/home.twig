@@ -52,6 +52,32 @@
             image: 'assets/images/projects2.png',
         }
     ],
+    news: [
+        {
+            image: 'assets/images/news1.png',
+            date: '20 авг 2021',
+            title: 'Как сделать строительство дешевле?',
+            text: 'Строительство дома можно сделать дешевле — выбрав проект...',
+        },
+        {
+            image: 'assets/images/news2.png',
+            date: '20 авг 2021',
+            title: 'Почему Гуд Вилл строит лучшие дома?',
+            text: 'Хотим обрадовать тех, кто планирует переезд из квартиры в дом...',
+        },
+        {
+            image: 'assets/images/news3.png',
+            date: '20 авг 2021',
+            title: 'Преимущества и недостатки частного дома',
+            text: 'Первое и главное: строим дом индивидуально для вас, по вашим...',
+        },
+        {
+            image: 'assets/images/news4.png',
+            date: '20 авг 2021',
+            title: 'Из чего мы строим дома в ипотеку?',
+            text: 'Самый популярный вопрос наших клиентов касается материалов, которы...',
+        },
+    ],
 } %}
 
 {% block main %}
@@ -74,6 +100,12 @@
     <section class="Layout__projects">
         {% include "@components/projects-section/projects-section.twig" with {
             items: scope.projects,
+        } %}
+    </section>
+
+    <section class="Layout__news">
+        {% include "@components/news-section/news-section.twig" with {
+            items: scope.news,
         } %}
     </section>
 {% endblock %}

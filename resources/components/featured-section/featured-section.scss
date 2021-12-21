@@ -37,12 +37,12 @@
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 16px;
+        gap: 16px;
         list-style: none;
 
         @include vw-sm-down {
             grid-template-columns: 1fr;
-            grid-gap: 12px;
+            gap: 12px;
             width: 100%;
         }
     }

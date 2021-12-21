@@ -14,7 +14,7 @@
 
     &__container {
         display: grid;
-        grid-gap: 16px;
+        gap: 16px;
         grid-template-columns: repeat(2, 1fr);
 
         @include vw-lg-down {
@@ -63,8 +63,7 @@
 
     &__itemTitle {
         margin-bottom: 12px;
-
-        font-weight: 500;
+        font-weight: $font-weight-medium;
         font-size: toRem(20px);
         line-height: 120%;
     }
