@@ -1,11 +1,17 @@
 {% import _self as macros %}
 
 {% set scope = {
-    items: items ?? []
+    items: items ?? [],
+    column: column ?? false,
+    white: white ?? false,
 } %}
 
 {% macro content(scope) %}
-    <ul class="Nav">
+    <ul class="
+        Nav 
+        {{ scope.column ? "Nav_column" : "" }}
+        {{ scope.white ? "Nav_white" : "" }}
+    ">
         {% for elem in scope.items %}
             {% set item = {
                 url: elem.url ?? '',

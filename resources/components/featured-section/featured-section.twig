@@ -1,0 +1,51 @@
+{% import _self as macros %}
+
+{% set scope = {
+    title: title ?? '',
+    text: text ?? '',
+    items: items ?? [],
+} %}
+
+{% macro feature(item) %}
+    {% set data = {
+        icon: item.icon ?? '',
+        title: item.title ?? '',
+        text: item.text ?? '',
+    } %}
+
+    <div class="FeaturedItem">
+        <img
+            src="{{ data.icon }}"
+            alt="" width="24px" height="24px"
+            class="FeaturedItem__icon"
+        >
+        <h3 class="FeaturedItem__title">
+            {{ data.title|raw }}
+        </h3>
+        <p class="FeaturedItem__text">
+            {{ data.text|raw }}
+        </p>
+    </div>
+{% endmacro %}
+
+{% macro content(scope) %}
+    <div class="FeaturedSection">
+        <div class="FeaturedSection__description">
+            <h2 class="FeaturedSection__title">
+                {{ scope.title|raw }}
+            </h2>
+            <p class="FeaturedSection__text">
+                {{ scope.text|raw }}
+            </p>
+        </div>
+        <ul class="FeaturedSection__grid">
+            {% for item in scope.items %}
+                <li>
+                    {{ macros.feature(item) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+
+{{ macros.content(scope) }}

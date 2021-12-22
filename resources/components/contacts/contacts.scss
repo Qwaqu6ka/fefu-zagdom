@@ -1,0 +1,23 @@
+.ContactsSection {
+    display: grid;
+    gap: 1em;
+    color: inherit;
+
+    a {
+        color: white;
+    }
+}
+
+.ContactsItem {
+    color: white;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+
+    &__icon {
+        flex-shrink: 0;
+        margin-top: 0.15em;
+        margin-right: 0.5em;
+        width: 1em;
+    }
+}

@@ -7,10 +7,63 @@
     &__logo {
         width: 160px;
         margin-right: 80px;
+
+        @include vw-xl-down {
+            margin-right: 35px;
+        }
+    }
+
+    &__nav {
+        @include vw-lg-down {
+            display: none;
+        }
     }
 
     &__phone {
         margin-left: auto;
         margin-right: 24px;
+
+        @include vw-md-down {
+            display: none;
+        }
+    }
+
+    &__feedbackButton {
+        @include vw-md-down {
+            display: none;
+        }
+    }
+
+    &__offCanvasButton {
+        margin-left: auto;
+
+        @include vw-md-up {
+            display: none;
+        }
+    }
+}
+
+.OffCanvas {
+    &__layout {
+        display: flex;
+        flex-flow: column;
+        padding-top: 6.5em;
+        padding-bottom: 3em;
+    }
+
+    &__close {
+        top: 31px;
+        right: 39px;
+        margin: 0;
+        padding: 0;
+        border: 0px;
+        border-radius: 6px;
+        background: rgba(white, 0.2);
+    }
+
+    &__nav {
+        flex-grow: 1;
+        margin-bottom: 1.5em;
+        font-size: 1.125em;
     }
 }

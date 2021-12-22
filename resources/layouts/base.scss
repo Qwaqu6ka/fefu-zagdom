@@ -9,7 +9,36 @@ body {
 
     &__main {
         flex: 1;
-        background-color: darkslategray;
-        color: dimgray;
+    }
+
+    &__slider {
+        padding-top: 40px;
+
+        @include vw-sm-down {
+            padding-top: 20px;
+        }
+    }
+
+    &__featured {
+        padding-top: 120px;
+        padding-bottom: 120px;
+
+        @include vw-sm-down {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__projects {
+        background-color: $color-white--dim;
+        padding: 92px 60px;
+
+        @include vw-sm-down {
+            padding: 32px 16px;
+        }
+    }
+
+    &__footer {
+        background-color: $color-green--dark;
     }
 }
