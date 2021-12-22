@@ -15,6 +15,14 @@
         }
     }
 
+    &_white {
+        %Nav_white__item {
+            :root & {
+                color: white;
+            }
+        }
+    }
+
     &__listItem {
         @extend %Nav_column__listItem;
         &:not(:last-child) {
@@ -23,7 +31,9 @@
     }
 
     &__item {
+        @extend %Nav_white__item;
         color: $color-gray;
+
         &:hover,
         &:focus,
         &:active {

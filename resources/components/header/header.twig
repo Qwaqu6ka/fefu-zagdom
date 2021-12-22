@@ -39,7 +39,9 @@
 {% endmacro %}
 
 {% macro button() %}
-    <button type="button" class="Button Button_primary">Оставить заявку</button>
+    <button type="button" class="Button Button_primary" data-uk-toggle="#feedback">
+        Оставить заявку
+    </button>
 {% endmacro %}
 
 {% macro offCanvasButton() %}
