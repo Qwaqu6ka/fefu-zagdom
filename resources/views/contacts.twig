@@ -1,0 +1,53 @@
+{% extends "@layouts/base.twig" %}
+
+{% set scope = {
+    breadcrumbs: [
+        {
+            title: 'Главная',
+            link: route('home'),
+        },
+        {
+            title: 'Контакты',
+            link: '',
+        },
+    ],
+} %}
+
+{% block main %}
+    <div class="ContactsPage Page Container">
+        <div class="Page__breadcrumbs">
+            {% include "@components/breadcrumbs/breadcrumbs.twig" with {
+                items: scope.breadcrumbs,
+            } %}
+        </div>
+        <div class="ContactsPage__layout">
+            <h1 class="ContactsPage__title Page__title">
+                Контакты
+            </h1>
+
+            <div class="ContactsPage__contacts">
+                {% include "@components/contacts/contacts.twig" with {
+                    altIcons: true,
+                } %}
+            </div>
+
+            <div class="ContactsPage__map" id="map"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block headScripts %}
+    {{ parent() }}
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8a846a4d-5e4c-48ef-ba7d-3eb2e5f59aaa&lang=ru_RU" type="text/javascript"></script>
+{% endblock headScripts %} 
+
+{% block bodyScripts %}
+    {{ parent() }}
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.dispatchEvent(new Event('MapLoaded'));
+        });
+    </script>
+{% endblock bodyScripts %}

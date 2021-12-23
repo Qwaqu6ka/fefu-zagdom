@@ -42,3 +42,26 @@ body {
         background-color: $color-green--dark;
     }
 }
+
+.Page {
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    &__breadcrumbs {
+        padding-bottom: 48px;
+
+        @include vw-sm-down {
+            padding-bottom: 32px;
+        }
+    }
+
+    &__title {
+        font-size: toRem(46px);
+        font-weight: $font-weight-bold;
+        padding-bottom: 32px;
+        
+        @include vw-sm-down {
+            font-size: toRem(32px);
+        }
+    }
+}

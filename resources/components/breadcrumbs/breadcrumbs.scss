@@ -1,0 +1,27 @@
+.Breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    &__item {
+        font-size: toRem(20px);
+        color: $color-gray;
+
+        &:not(:last-child) {
+            &::after {
+                content: '/';
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__link {
+        color: $color-green;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-green--dark;
+        }
+    }
+}

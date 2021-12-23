@@ -21,6 +21,9 @@ $font-weight-bold: 700;
 // Layouts
 @import "../layouts/base.scss";
 
+// Views
+@import "./pages/contacts.scss";
+
 // Mixins
 @import "./mixins.scss";
 
@@ -37,3 +40,5 @@ $font-weight-bold: 700;
 @import "../components/featured-section/featured-section.scss";
 @import "../components/projects-section/projects-section.scss";
 @import "../components/news-section/news-section.scss";
+@import "../components/breadcrumbs/breadcrumbs.scss";
+@import "../components/feedback-modal/feedback-modal.scss";

@@ -6,6 +6,8 @@
         <title>Загородный дом</title>
     
         <link href="/build/bundle.css" rel="stylesheet">
+
+        {% block headScripts %}{% endblock headScripts %}
     </head>
     <body>
         <div class="Layout">
@@ -22,6 +24,12 @@
             </footer>
         </div>
 
-        <script type="text/javascript" src="/build/bundle.js"></script>
+        {% block modals %}
+            {% include "@components/feedback-modal/feedback-modal.twig" %}
+        {% endblock %}
+
+        {% block bodyScripts %}
+            <script type="text/javascript" src="/build/bundle.js"></script>
+        {% endblock bodyScripts %}
     </body>
 </html>

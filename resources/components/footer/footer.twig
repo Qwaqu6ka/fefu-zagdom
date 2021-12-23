@@ -15,7 +15,7 @@
             name: 'Новости',
         },
         {
-            url: '/',
+            url: route('contacts'),
             name: 'Контакты',
         },
     ],
@@ -42,7 +42,7 @@
 {% endmacro %}
 
 {% macro button() %}
-    <button type="button" class="Button Button_primary" data-uk-toggle="#feedback">
+    <button type="button" class="Button Button_primary" uk-toggle="target: #feedback">
         Оставить заявку
     </button>
 {% endmacro %}
@@ -86,6 +86,7 @@
             <div class="Footer__contacts">
                 {% include "@components/contacts/contacts.twig" with {
                     altIcons: true,
+                    white: true,
                 } %}
             </div>
 

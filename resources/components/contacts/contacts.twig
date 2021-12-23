@@ -5,10 +5,11 @@
     email: 'info@gmail.com',
     address: 'г. Владивосток<br>ул. Выселковая 49, стр. 3',
     altIcons: altIcons ?? false,
+    white: white ?? false,
 } %}
 
 {% macro content(scope) %}
-    <div class="ContactsSection">
+    <div class="ContactsSection {{ scope.white ? 'ContactsSection_white' : '' }}">
         <div>
             <a href="tel:{{ scope.phone }}" class="ContactsItem">
                 <img
