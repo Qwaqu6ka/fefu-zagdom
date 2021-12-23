@@ -1,0 +1,43 @@
+.ContactsPage {
+    &__layout {
+        display: grid;
+        grid-template-areas: 
+            "title map"
+            "contacts map"
+            ". map";
+        grid-template-columns: 1fr minmax(auto, 544px);
+        gap: 32px 16px;
+        max-width: 944px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include vw-md-down {
+            grid-template-areas: 
+                "title"
+                "contacts"
+                "map";
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__title {
+        grid-area: title;
+
+        @include vw-sm-down {
+            padding: unset;
+        }
+    }
+
+    &__contacts {
+        grid-area: contacts;
+        font-size: toRem(20px);
+        a:first-of-type {
+            font-weight: 600;
+        }
+    }
+
+    &__map {
+        grid-area: map;
+        height: 496px;
+    }
+}

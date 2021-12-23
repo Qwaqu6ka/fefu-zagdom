@@ -1,0 +1,86 @@
+.NewsList {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 32px;
+
+        @include vw-xs-down {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__title {
+        font-weight: $font-weight-bold;
+        flex-grow: 2;
+    }
+
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px 16px;
+
+        @include vw-lg-down {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include vw-md-down {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include vw-sm-down {
+            @include overflow-slider-mixin;
+        }
+    }
+
+    &__item {
+        padding-bottom: 15px;
+
+        @include vw-sm-down {
+            &:not(:last-child) {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+.NewsCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: 100%;
+
+    @include vw-sm-down {
+        width: 344px;
+    }
+
+    @include vw-xs-down {
+        width: 288px;
+    }
+
+    &__image {
+        margin-bottom: 16px;
+    }
+
+    &__date {
+        color: black;
+        font-size: toRem(14px);
+        font-family: $base-heading-font-family;
+        margin-bottom: 16px;
+    }
+
+    &__title {
+        font-weight: $font-weight-medium;
+        font-size: toRem(20px);
+        color: black;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: toRem(16px);
+        line-height: 1.2;
+    }
+}

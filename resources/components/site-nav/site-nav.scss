@@ -1,13 +1,39 @@
 .Nav {
     display: flex;
     list-style: none;
+
+    &_column {
+        flex-flow: column;
+        
+        %Nav_column__listItem {
+            :root & {
+                margin-right: unset;
+            }
+            &:not(:last-child) {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+
+    &_white {
+        %Nav_white__item {
+            :root & {
+                color: white;
+            }
+        }
+    }
+
     &__listItem {
+        @extend %Nav_column__listItem;
         &:not(:last-child) {
             margin-right: 24px;
         }
     }
+
     &__item {
+        @extend %Nav_white__item;
         color: $color-gray;
+
         &:hover,
         &:focus,
         &:active {

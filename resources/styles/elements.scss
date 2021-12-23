@@ -21,4 +21,12 @@
     &_primary {
         @extend .uk-button-primary;
     }
+
+    &_secondary {
+        @extend .uk-button-secondary;
+    }
+
+    &_icon {
+        padding: 16px
+    }
 }
